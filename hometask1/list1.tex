@@ -1,19 +1,78 @@
 \documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setmainfont{Times New Roman}
 
-\title{дз по дискре1}
+\usepackage{enumitem}
+
+\title{diskret}
 \author{Артём Басыров}
 \date{October 2025}
 
 \begin{document}
 
+\maketitle
 
 \section{task 1a}
 $$
-A\subseteq (B\land C) =>\exists x \in A : x\in (B \land C) => x\in B \land x\in C => A\subseteq B \land A\subseteq C
+A \subseteq (B \land C) \iff \exists x \in A : x \in (B \land C) \iff x \in B \land x \in C \iff A \subseteq B \land A \subseteq C
 $$
 \section{task 1b}
 $$
-A\subseteq (B/C) =>\exists x \in A :x\in (B / C) => x\in B \land x\notin C => A\subseteq B \land A\not\subseteq C
+A \subseteq (B / C) \iff \exists x \in A : x \in (B / C) \iff x \in B \land x \notin C \iff A \subseteq B \land A \not\subseteq C
 $$
+\section{task 2a}
+$$
+P(A \cap B) = \{ X \mid X \subseteq A \cap B \} = \{ X \mid X \subseteq A \land X \subseteq B \} = P(A) \cap P(B)
+$$
+
+\section{task 2б}
+$$
+X \in P(A) \cup P(B) \implies X \subseteq A \text{ или } X \subseteq B \implies X \subseteq A \cup B
+$$
+следовательно,
+$$
+P(A) \cup P(B) \subseteq P(A \cup B)
+$$
+
+\section{task 2в}
+$$
+X \in P(A \setminus B) \implies X \subseteq A \setminus B
+$$
+Если $X \neq \emptyset$, то
+$$
+X \subseteq A,\quad X \cap B = \emptyset \implies X \notin P(B)
+$$
+и
+$$
+X \in P(A) \setminus P(B)
+$$
+Если $X = \emptyset$, то $\emptyset \in \{\emptyset\}$.
+
+$$
+P(A \setminus B) \subseteq (P(A) \setminus P(B)) \cup \{\emptyset\}
+$$
+
+\section{task 4}
+\begin{enumerate}[label=\arabic*)]
+  \item Область: $\mathbb{R}$; инъективна, сюръективна, биекция.
+  \item Область: $[1, +\infty)$; не инъективна, не сюръективна.
+  \item Область: $\mathbb{R}$; биекция.
+  \item Область: $(0, +\infty)$; инъективна, не сюръективна.
+  \item Область: $[-1, 1]$; инъективна и сюръективна — биекция.
+  \item Область: $[0, 1]$; инъективна и сюръективна — биекция.
+  \item Область: $[-1, 1]$; не инъективна, сюръективна.
+  \item Область: всё $\mathbb{R}$; не инъективна, не является биекцией.
+\end{enumerate}
+
+\section{task 5}
+пусть $x \in A$, $y \in B$, $z \in C$ \\
+а) нет, т.к. f не гарантирует инъективность \\
+б) да, т.к. f сюръективна => покрывает всё множество C \\
+в) да, т.к. все $x \in A$ имеют ! пару y $\in$ B и все y$\in$B имеют ! пару z $\in$ C \\
+г) нет, т.к. не у всех y есть прообраз x\\
+д) да, т.к. все x являются прообразами \\
+е) да, т.к. все значения z имеют прообраз \\
+
 \end{document}
